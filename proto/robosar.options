@@ -1,2 +1,3 @@
 # robosar.options
 robosar_fms.LaserScanner.values max_count:700 fixed_length:true
+robosar_fms.StatusMessage.values max_count:200 fixed_length:true
