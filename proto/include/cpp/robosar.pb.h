@@ -38,7 +38,7 @@ namespace protobuf_robosar_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[8];
+  static const ::google::protobuf::internal::ParseTable schema[9];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -67,6 +67,9 @@ extern LaserScannerDefaultTypeInternal _LaserScanner_default_instance_;
 class SensorData;
 class SensorDataDefaultTypeInternal;
 extern SensorDataDefaultTypeInternal _SensorData_default_instance_;
+class StatusMessage;
+class StatusMessageDefaultTypeInternal;
+extern StatusMessageDefaultTypeInternal _StatusMessage_default_instance_;
 class Ultrasonic;
 class UltrasonicDefaultTypeInternal;
 extern UltrasonicDefaultTypeInternal _Ultrasonic_default_instance_;
@@ -80,6 +83,7 @@ template<> ::robosar_fms::Gyroscope* Arena::CreateMaybeMessage<::robosar_fms::Gy
 template<> ::robosar_fms::Infrared* Arena::CreateMaybeMessage<::robosar_fms::Infrared>(Arena*);
 template<> ::robosar_fms::LaserScanner* Arena::CreateMaybeMessage<::robosar_fms::LaserScanner>(Arena*);
 template<> ::robosar_fms::SensorData* Arena::CreateMaybeMessage<::robosar_fms::SensorData>(Arena*);
+template<> ::robosar_fms::StatusMessage* Arena::CreateMaybeMessage<::robosar_fms::StatusMessage>(Arena*);
 template<> ::robosar_fms::Ultrasonic* Arena::CreateMaybeMessage<::robosar_fms::Ultrasonic>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -1222,6 +1226,165 @@ class LaserScanner : public ::google::protobuf::Message /* @@protoc_insertion_po
 };
 // -------------------------------------------------------------------
 
+class StatusMessage : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:robosar_fms.StatusMessage) */ {
+ public:
+  StatusMessage();
+  virtual ~StatusMessage();
+
+  StatusMessage(const StatusMessage& from);
+
+  inline StatusMessage& operator=(const StatusMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  StatusMessage(StatusMessage&& from) noexcept
+    : StatusMessage() {
+    *this = ::std::move(from);
+  }
+
+  inline StatusMessage& operator=(StatusMessage&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  inline ::google::protobuf::Arena* GetArena() const final {
+    return GetArenaNoVirtual();
+  }
+  inline void* GetMaybeArenaPointer() const final {
+    return MaybeArenaPtr();
+  }
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const StatusMessage& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StatusMessage* internal_default_instance() {
+    return reinterpret_cast<const StatusMessage*>(
+               &_StatusMessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void UnsafeArenaSwap(StatusMessage* other);
+  void Swap(StatusMessage* other);
+  friend void swap(StatusMessage& a, StatusMessage& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StatusMessage* New() const final {
+    return CreateMaybeMessage<StatusMessage>(NULL);
+  }
+
+  StatusMessage* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StatusMessage>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const StatusMessage& from);
+  void MergeFrom(const StatusMessage& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StatusMessage* other);
+  protected:
+  explicit StatusMessage(::google::protobuf::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::google::protobuf::Arena* arena);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string message = 2;
+  bool has_message() const;
+  void clear_message();
+  static const int kMessageFieldNumber = 2;
+  const ::std::string& message() const;
+  void set_message(const ::std::string& value);
+  #if LANG_CXX11
+  void set_message(::std::string&& value);
+  #endif
+  void set_message(const char* value);
+  void set_message(const char* value, size_t size);
+  ::std::string* mutable_message();
+  ::std::string* release_message();
+  void set_allocated_message(::std::string* message);
+  PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  ::std::string* unsafe_arena_release_message();
+  PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_message(
+      ::std::string* message);
+
+  // required uint32 status_val = 1;
+  bool has_status_val() const;
+  void clear_status_val();
+  static const int kStatusValFieldNumber = 1;
+  ::google::protobuf::uint32 status_val() const;
+  void set_status_val(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:robosar_fms.StatusMessage)
+ private:
+  void set_has_status_val();
+  void clear_has_status_val();
+  void set_has_message();
+  void clear_has_message();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr message_;
+  ::google::protobuf::uint32 status_val_;
+  friend struct ::protobuf_robosar_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class SensorData : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:robosar_fms.SensorData) */ {
  public:
   SensorData();
@@ -1270,7 +1433,7 @@ class SensorData : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_SensorData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void UnsafeArenaSwap(SensorData* other);
   void Swap(SensorData* other);
@@ -1433,6 +1596,21 @@ class SensorData : public ::google::protobuf::Message /* @@protoc_insertion_poin
       ::robosar_fms::LaserScanner* lrf_data);
   ::robosar_fms::LaserScanner* unsafe_arena_release_lrf_data();
 
+  // required .robosar_fms.StatusMessage status_msg_data = 10;
+  bool has_status_msg_data() const;
+  void clear_status_msg_data();
+  static const int kStatusMsgDataFieldNumber = 10;
+  private:
+  const ::robosar_fms::StatusMessage& _internal_status_msg_data() const;
+  public:
+  const ::robosar_fms::StatusMessage& status_msg_data() const;
+  ::robosar_fms::StatusMessage* release_status_msg_data();
+  ::robosar_fms::StatusMessage* mutable_status_msg_data();
+  void set_allocated_status_msg_data(::robosar_fms::StatusMessage* status_msg_data);
+  void unsafe_arena_set_allocated_status_msg_data(
+      ::robosar_fms::StatusMessage* status_msg_data);
+  ::robosar_fms::StatusMessage* unsafe_arena_release_status_msg_data();
+
   // required uint64 timestamp_ns = 1;
   bool has_timestamp_ns() const;
   void clear_timestamp_ns();
@@ -1467,6 +1645,8 @@ class SensorData : public ::google::protobuf::Message /* @@protoc_insertion_poin
   void clear_has_us_data();
   void set_has_lrf_data();
   void clear_has_lrf_data();
+  void set_has_status_msg_data();
+  void clear_has_status_msg_data();
 
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
@@ -1484,6 +1664,7 @@ class SensorData : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::robosar_fms::Infrared* ir_data_;
   ::robosar_fms::Ultrasonic* us_data_;
   ::robosar_fms::LaserScanner* lrf_data_;
+  ::robosar_fms::StatusMessage* status_msg_data_;
   ::google::protobuf::uint64 timestamp_ns_;
   ::google::protobuf::uint32 seq_id_;
   friend struct ::protobuf_robosar_2eproto::TableStruct;
@@ -2203,17 +2384,133 @@ LaserScanner::mutable_values() {
 
 // -------------------------------------------------------------------
 
+// StatusMessage
+
+// required uint32 status_val = 1;
+inline bool StatusMessage::has_status_val() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void StatusMessage::set_has_status_val() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void StatusMessage::clear_has_status_val() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void StatusMessage::clear_status_val() {
+  status_val_ = 0u;
+  clear_has_status_val();
+}
+inline ::google::protobuf::uint32 StatusMessage::status_val() const {
+  // @@protoc_insertion_point(field_get:robosar_fms.StatusMessage.status_val)
+  return status_val_;
+}
+inline void StatusMessage::set_status_val(::google::protobuf::uint32 value) {
+  set_has_status_val();
+  status_val_ = value;
+  // @@protoc_insertion_point(field_set:robosar_fms.StatusMessage.status_val)
+}
+
+// required string message = 2;
+inline bool StatusMessage::has_message() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void StatusMessage::set_has_message() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void StatusMessage::clear_has_message() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void StatusMessage::clear_message() {
+  message_.ClearToEmpty(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), GetArenaNoVirtual());
+  clear_has_message();
+}
+inline const ::std::string& StatusMessage::message() const {
+  // @@protoc_insertion_point(field_get:robosar_fms.StatusMessage.message)
+  return message_.Get();
+}
+inline void StatusMessage::set_message(const ::std::string& value) {
+  set_has_message();
+  message_.Set(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value, GetArenaNoVirtual());
+  // @@protoc_insertion_point(field_set:robosar_fms.StatusMessage.message)
+}
+#if LANG_CXX11
+inline void StatusMessage::set_message(::std::string&& value) {
+  set_has_message();
+  message_.Set(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArenaNoVirtual());
+  // @@protoc_insertion_point(field_set_rvalue:robosar_fms.StatusMessage.message)
+}
+#endif
+inline void StatusMessage::set_message(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_message();
+  message_.Set(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArenaNoVirtual());
+  // @@protoc_insertion_point(field_set_char:robosar_fms.StatusMessage.message)
+}
+inline void StatusMessage::set_message(const char* value,
+    size_t size) {
+  set_has_message();
+  message_.Set(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArenaNoVirtual());
+  // @@protoc_insertion_point(field_set_pointer:robosar_fms.StatusMessage.message)
+}
+inline ::std::string* StatusMessage::mutable_message() {
+  set_has_message();
+  // @@protoc_insertion_point(field_mutable:robosar_fms.StatusMessage.message)
+  return message_.Mutable(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), GetArenaNoVirtual());
+}
+inline ::std::string* StatusMessage::release_message() {
+  // @@protoc_insertion_point(field_release:robosar_fms.StatusMessage.message)
+  if (!has_message()) {
+    return NULL;
+  }
+  clear_has_message();
+  return message_.ReleaseNonDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), GetArenaNoVirtual());
+}
+inline void StatusMessage::set_allocated_message(::std::string* message) {
+  if (message != NULL) {
+    set_has_message();
+  } else {
+    clear_has_message();
+  }
+  message_.SetAllocated(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message,
+      GetArenaNoVirtual());
+  // @@protoc_insertion_point(field_set_allocated:robosar_fms.StatusMessage.message)
+}
+inline ::std::string* StatusMessage::unsafe_arena_release_message() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:robosar_fms.StatusMessage.message)
+  GOOGLE_DCHECK(GetArenaNoVirtual() != NULL);
+  clear_has_message();
+  return message_.UnsafeArenaRelease(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      GetArenaNoVirtual());
+}
+inline void StatusMessage::unsafe_arena_set_allocated_message(
+    ::std::string* message) {
+  GOOGLE_DCHECK(GetArenaNoVirtual() != NULL);
+  if (message != NULL) {
+    set_has_message();
+  } else {
+    clear_has_message();
+  }
+  message_.UnsafeArenaSetAllocated(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      message, GetArenaNoVirtual());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:robosar_fms.StatusMessage.message)
+}
+
+// -------------------------------------------------------------------
+
 // SensorData
 
 // required uint64 timestamp_ns = 1;
 inline bool SensorData::has_timestamp_ns() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void SensorData::set_has_timestamp_ns() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void SensorData::clear_has_timestamp_ns() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void SensorData::clear_timestamp_ns() {
   timestamp_ns_ = GOOGLE_ULONGLONG(0);
@@ -2231,13 +2528,13 @@ inline void SensorData::set_timestamp_ns(::google::protobuf::uint64 value) {
 
 // required uint32 seq_id = 2;
 inline bool SensorData::has_seq_id() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void SensorData::set_has_seq_id() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void SensorData::clear_has_seq_id() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void SensorData::clear_seq_id() {
   seq_id_ = 0u;
@@ -2736,9 +3033,80 @@ inline void SensorData::set_allocated_lrf_data(::robosar_fms::LaserScanner* lrf_
   // @@protoc_insertion_point(field_set_allocated:robosar_fms.SensorData.lrf_data)
 }
 
+// required .robosar_fms.StatusMessage status_msg_data = 10;
+inline bool SensorData::has_status_msg_data() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void SensorData::set_has_status_msg_data() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void SensorData::clear_has_status_msg_data() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void SensorData::clear_status_msg_data() {
+  if (status_msg_data_ != NULL) status_msg_data_->Clear();
+  clear_has_status_msg_data();
+}
+inline const ::robosar_fms::StatusMessage& SensorData::_internal_status_msg_data() const {
+  return *status_msg_data_;
+}
+inline const ::robosar_fms::StatusMessage& SensorData::status_msg_data() const {
+  const ::robosar_fms::StatusMessage* p = status_msg_data_;
+  // @@protoc_insertion_point(field_get:robosar_fms.SensorData.status_msg_data)
+  return p != NULL ? *p : *reinterpret_cast<const ::robosar_fms::StatusMessage*>(
+      &::robosar_fms::_StatusMessage_default_instance_);
+}
+inline ::robosar_fms::StatusMessage* SensorData::release_status_msg_data() {
+  // @@protoc_insertion_point(field_release:robosar_fms.SensorData.status_msg_data)
+  clear_has_status_msg_data();
+  ::robosar_fms::StatusMessage* temp = status_msg_data_;
+  if (GetArenaNoVirtual() != NULL) {
+    temp = ::google::protobuf::internal::DuplicateIfNonNull(temp);
+  }
+  status_msg_data_ = NULL;
+  return temp;
+}
+inline ::robosar_fms::StatusMessage* SensorData::unsafe_arena_release_status_msg_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:robosar_fms.SensorData.status_msg_data)
+  clear_has_status_msg_data();
+  ::robosar_fms::StatusMessage* temp = status_msg_data_;
+  status_msg_data_ = NULL;
+  return temp;
+}
+inline ::robosar_fms::StatusMessage* SensorData::mutable_status_msg_data() {
+  set_has_status_msg_data();
+  if (status_msg_data_ == NULL) {
+    auto* p = CreateMaybeMessage<::robosar_fms::StatusMessage>(GetArenaNoVirtual());
+    status_msg_data_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:robosar_fms.SensorData.status_msg_data)
+  return status_msg_data_;
+}
+inline void SensorData::set_allocated_status_msg_data(::robosar_fms::StatusMessage* status_msg_data) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete status_msg_data_;
+  }
+  if (status_msg_data) {
+    ::google::protobuf::Arena* submessage_arena =
+      ::google::protobuf::Arena::GetArena(status_msg_data);
+    if (message_arena != submessage_arena) {
+      status_msg_data = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, status_msg_data, submessage_arena);
+    }
+    set_has_status_msg_data();
+  } else {
+    clear_has_status_msg_data();
+  }
+  status_msg_data_ = status_msg_data;
+  // @@protoc_insertion_point(field_set_allocated:robosar_fms.SensorData.status_msg_data)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
