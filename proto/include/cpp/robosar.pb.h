@@ -1332,7 +1332,7 @@ class Image : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
-  // required bytes image_data = 4;
+  // required string image_data = 4;
   bool has_image_data() const;
   void clear_image_data();
   static const int kImageDataFieldNumber = 4;
@@ -1342,7 +1342,7 @@ class Image : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   void set_image_data(::std::string&& value);
   #endif
   void set_image_data(const char* value);
-  void set_image_data(const void* value, size_t size);
+  void set_image_data(const char* value, size_t size);
   ::std::string* mutable_image_data();
   ::std::string* release_image_data();
   void set_allocated_image_data(::std::string* image_data);
@@ -2478,7 +2478,7 @@ inline void Image::set_channels(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:robosar_fms.Image.channels)
 }
 
-// required bytes image_data = 4;
+// required string image_data = 4;
 inline bool Image::has_image_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -2516,7 +2516,7 @@ inline void Image::set_image_data(const char* value) {
               GetArenaNoVirtual());
   // @@protoc_insertion_point(field_set_char:robosar_fms.Image.image_data)
 }
-inline void Image::set_image_data(const void* value,
+inline void Image::set_image_data(const char* value,
     size_t size) {
   set_has_image_data();
   image_data_.Set(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(

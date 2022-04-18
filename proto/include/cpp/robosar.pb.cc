@@ -418,7 +418,7 @@ void AddDescriptorsImpl() {
       "\004\022\r\n\005right\030\002 \002(\004\"\"\n\014LaserScanner\022\022\n\006valu"
       "es\030\001 \003(\004B\002\020\001\"L\n\005Image\022\r\n\005width\030\001 \002(\r\022\016\n\006"
       "height\030\002 \002(\r\022\020\n\010channels\030\003 \002(\r\022\022\n\nimage_"
-      "data\030\004 \002(\014\"\222\003\n\nSensorData\022\024\n\014timestamp_n"
+      "data\030\004 \002(\t\"\222\003\n\nSensorData\022\024\n\014timestamp_n"
       "s\030\001 \002(\004\022\016\n\006seq_id\030\002 \002(\r\022.\n\naccel_data\030\003 "
       "\002(\0132\032.robosar_fms.Accelerometer\022)\n\tgyro_"
       "data\030\004 \002(\0132\026.robosar_fms.Gyroscope\022.\n\nco"
@@ -3448,12 +3448,16 @@ bool Image::MergePartialFromCodedStream(
         break;
       }
 
-      // required bytes image_data = 4;
+      // required string image_data = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_image_data()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->image_data().data(), static_cast<int>(this->image_data().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "robosar_fms.Image.image_data");
         } else {
           goto handle_unusual;
         }
@@ -3502,9 +3506,13 @@ void Image::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->channels(), output);
   }
 
-  // required bytes image_data = 4;
+  // required string image_data = 4;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->image_data().data(), static_cast<int>(this->image_data().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "robosar_fms.Image.image_data");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       4, this->image_data(), output);
   }
 
@@ -3538,10 +3546,14 @@ void Image::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->channels(), target);
   }
 
-  // required bytes image_data = 4;
+  // required string image_data = 4;
   if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->image_data().data(), static_cast<int>(this->image_data().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "robosar_fms.Image.image_data");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         4, this->image_data(), target);
   }
 
@@ -3558,9 +3570,9 @@ size_t Image::RequiredFieldsByteSizeFallback() const {
   size_t total_size = 0;
 
   if (has_image_data()) {
-    // required bytes image_data = 4;
+    // required string image_data = 4;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
+      ::google::protobuf::internal::WireFormatLite::StringSize(
         this->image_data());
   }
 
@@ -3597,9 +3609,9 @@ size_t Image::ByteSizeLong() const {
         _internal_metadata_.unknown_fields());
   }
   if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
-    // required bytes image_data = 4;
+    // required string image_data = 4;
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
+      ::google::protobuf::internal::WireFormatLite::StringSize(
         this->image_data());
 
     // required uint32 width = 1;
