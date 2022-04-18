@@ -56,7 +56,8 @@ message LaserScanner {
 }
 
 message StatusMessage {
-    repeated char values = 1 [packed = true];
+    required uint32 status_val = 1;
+    required string message = 2;
 }
 
 message SensorData {
