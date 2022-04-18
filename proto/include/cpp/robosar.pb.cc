@@ -24,6 +24,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_robosar_2eproto ::google::protobuf::int
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_robosar_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Encoder_count;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_robosar_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Encoder_speed;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_robosar_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Gyroscope;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_robosar_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Image;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_robosar_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Infrared;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_robosar_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LaserScanner;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_robosar_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Ultrasonic;
@@ -64,6 +65,11 @@ class LaserScannerDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<LaserScanner>
       _instance;
 } _LaserScanner_default_instance_;
+class ImageDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Image>
+      _instance;
+} _Image_default_instance_;
 class SensorDataDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SensorData>
@@ -169,6 +175,20 @@ static void InitDefaultsLaserScanner() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_LaserScanner =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsLaserScanner}, {}};
 
+static void InitDefaultsImage() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::robosar_fms::_Image_default_instance_;
+    new (ptr) ::robosar_fms::Image();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::robosar_fms::Image::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Image =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsImage}, {}};
+
 static void InitDefaultsSensorData() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -180,15 +200,16 @@ static void InitDefaultsSensorData() {
   ::robosar_fms::SensorData::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<7> scc_info_SensorData =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 7, InitDefaultsSensorData}, {
+::google::protobuf::internal::SCCInfo<8> scc_info_SensorData =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 8, InitDefaultsSensorData}, {
       &protobuf_robosar_2eproto::scc_info_Accelerometer.base,
       &protobuf_robosar_2eproto::scc_info_Gyroscope.base,
       &protobuf_robosar_2eproto::scc_info_Encoder_count.base,
       &protobuf_robosar_2eproto::scc_info_Encoder_speed.base,
       &protobuf_robosar_2eproto::scc_info_Infrared.base,
       &protobuf_robosar_2eproto::scc_info_Ultrasonic.base,
-      &protobuf_robosar_2eproto::scc_info_LaserScanner.base,}};
+      &protobuf_robosar_2eproto::scc_info_LaserScanner.base,
+      &protobuf_robosar_2eproto::scc_info_Image.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Accelerometer.base);
@@ -198,10 +219,11 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Encoder_count.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Encoder_speed.base);
   ::google::protobuf::internal::InitSCC(&scc_info_LaserScanner.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Image.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SensorData.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[8];
+::google::protobuf::Metadata file_level_metadata[9];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::Accelerometer, _has_bits_),
@@ -295,6 +317,19 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::LaserScanner, values_),
   ~0u,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::Image, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::Image, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::Image, width_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::Image, height_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::Image, channels_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::Image, image_data_),
+  1,
+  2,
+  3,
+  0,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::SensorData, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::SensorData, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -309,8 +344,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::SensorData, ir_data_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::SensorData, us_data_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::SensorData, lrf_data_),
-  7,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::robosar_fms::SensorData, img_data_),
   8,
+  9,
   0,
   1,
   2,
@@ -318,6 +354,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   4,
   5,
   6,
+  7,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 8, sizeof(::robosar_fms::Accelerometer)},
@@ -327,7 +364,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 66, 73, sizeof(::robosar_fms::Encoder_count)},
   { 75, 82, sizeof(::robosar_fms::Encoder_speed)},
   { 84, 90, sizeof(::robosar_fms::LaserScanner)},
-  { 91, 105, sizeof(::robosar_fms::SensorData)},
+  { 91, 100, sizeof(::robosar_fms::Image)},
+  { 104, 119, sizeof(::robosar_fms::SensorData)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -338,6 +376,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::robosar_fms::_Encoder_count_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::robosar_fms::_Encoder_speed_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::robosar_fms::_LaserScanner_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::robosar_fms::_Image_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::robosar_fms::_SensorData_default_instance_),
 };
 
@@ -356,7 +395,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 8);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 9);
 }
 
 void AddDescriptorsImpl() {
@@ -377,19 +416,22 @@ void AddDescriptorsImpl() {
       " \002(\001\",\n\rEncoder_count\022\014\n\004left\030\001 \002(\004\022\r\n\005r"
       "ight\030\002 \002(\004\",\n\rEncoder_speed\022\014\n\004left\030\001 \002("
       "\004\022\r\n\005right\030\002 \002(\004\"\"\n\014LaserScanner\022\022\n\006valu"
-      "es\030\001 \003(\004B\002\020\001\"\354\002\n\nSensorData\022\024\n\014timestamp"
-      "_ns\030\001 \002(\004\022\016\n\006seq_id\030\002 \002(\r\022.\n\naccel_data\030"
-      "\003 \002(\0132\032.robosar_fms.Accelerometer\022)\n\tgyr"
-      "o_data\030\004 \002(\0132\026.robosar_fms.Gyroscope\022.\n\n"
-      "count_data\030\005 \002(\0132\032.robosar_fms.Encoder_c"
-      "ount\022.\n\nspeed_data\030\006 \002(\0132\032.robosar_fms.E"
-      "ncoder_speed\022&\n\007ir_data\030\007 \002(\0132\025.robosar_"
-      "fms.Infrared\022(\n\007us_data\030\010 \002(\0132\027.robosar_"
-      "fms.Ultrasonic\022+\n\010lrf_data\030\t \002(\0132\031.robos"
-      "ar_fms.LaserScannerB\003\370\001\001"
+      "es\030\001 \003(\004B\002\020\001\"L\n\005Image\022\r\n\005width\030\001 \002(\r\022\016\n\006"
+      "height\030\002 \002(\r\022\020\n\010channels\030\003 \002(\r\022\022\n\nimage_"
+      "data\030\004 \002(\014\"\222\003\n\nSensorData\022\024\n\014timestamp_n"
+      "s\030\001 \002(\004\022\016\n\006seq_id\030\002 \002(\r\022.\n\naccel_data\030\003 "
+      "\002(\0132\032.robosar_fms.Accelerometer\022)\n\tgyro_"
+      "data\030\004 \002(\0132\026.robosar_fms.Gyroscope\022.\n\nco"
+      "unt_data\030\005 \002(\0132\032.robosar_fms.Encoder_cou"
+      "nt\022.\n\nspeed_data\030\006 \002(\0132\032.robosar_fms.Enc"
+      "oder_speed\022&\n\007ir_data\030\007 \002(\0132\025.robosar_fm"
+      "s.Infrared\022(\n\007us_data\030\010 \002(\0132\027.robosar_fm"
+      "s.Ultrasonic\022+\n\010lrf_data\030\t \002(\0132\031.robosar"
+      "_fms.LaserScanner\022$\n\010img_data\030\013 \002(\0132\022.ro"
+      "bosar_fms.ImageB\003\370\001\001"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 984);
+      descriptor, 1100);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "robosar.proto", &protobuf_RegisterTypes);
 }
@@ -3258,6 +3300,428 @@ void LaserScanner::InternalSwap(LaserScanner* other) {
 
 // ===================================================================
 
+void Image::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Image::kWidthFieldNumber;
+const int Image::kHeightFieldNumber;
+const int Image::kChannelsFieldNumber;
+const int Image::kImageDataFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Image::Image()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_robosar_2eproto::scc_info_Image.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:robosar_fms.Image)
+}
+Image::Image(::google::protobuf::Arena* arena)
+  : ::google::protobuf::Message(),
+  _internal_metadata_(arena) {
+  ::google::protobuf::internal::InitSCC(&protobuf_robosar_2eproto::scc_info_Image.base);
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:robosar_fms.Image)
+}
+Image::Image(const Image& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  image_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_image_data()) {
+    image_data_.Set(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_data(),
+      GetArenaNoVirtual());
+  }
+  ::memcpy(&width_, &from.width_,
+    static_cast<size_t>(reinterpret_cast<char*>(&channels_) -
+    reinterpret_cast<char*>(&width_)) + sizeof(channels_));
+  // @@protoc_insertion_point(copy_constructor:robosar_fms.Image)
+}
+
+void Image::SharedCtor() {
+  image_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&width_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&channels_) -
+      reinterpret_cast<char*>(&width_)) + sizeof(channels_));
+}
+
+Image::~Image() {
+  // @@protoc_insertion_point(destructor:robosar_fms.Image)
+  SharedDtor();
+}
+
+void Image::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaNoVirtual() == NULL);
+  image_data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void Image::ArenaDtor(void* object) {
+  Image* _this = reinterpret_cast< Image* >(object);
+  (void)_this;
+}
+void Image::RegisterArenaDtor(::google::protobuf::Arena* arena) {
+}
+void Image::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Image::descriptor() {
+  ::protobuf_robosar_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_robosar_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Image& Image::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_robosar_2eproto::scc_info_Image.base);
+  return *internal_default_instance();
+}
+
+
+void Image::Clear() {
+// @@protoc_insertion_point(message_clear_start:robosar_fms.Image)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    image_data_.ClearNonDefaultToEmpty();
+  }
+  if (cached_has_bits & 14u) {
+    ::memset(&width_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&channels_) -
+        reinterpret_cast<char*>(&width_)) + sizeof(channels_));
+  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool Image::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:robosar_fms.Image)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint32 width = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_width();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &width_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // required uint32 height = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          set_has_height();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &height_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // required uint32 channels = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+          set_has_channels();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &channels_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // required bytes image_data = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_image_data()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:robosar_fms.Image)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:robosar_fms.Image)
+  return false;
+#undef DO_
+}
+
+void Image::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:robosar_fms.Image)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required uint32 width = 1;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->width(), output);
+  }
+
+  // required uint32 height = 2;
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->height(), output);
+  }
+
+  // required uint32 channels = 3;
+  if (cached_has_bits & 0x00000008u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->channels(), output);
+  }
+
+  // required bytes image_data = 4;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      4, this->image_data(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:robosar_fms.Image)
+}
+
+::google::protobuf::uint8* Image::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:robosar_fms.Image)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required uint32 width = 1;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->width(), target);
+  }
+
+  // required uint32 height = 2;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->height(), target);
+  }
+
+  // required uint32 channels = 3;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->channels(), target);
+  }
+
+  // required bytes image_data = 4;
+  if (cached_has_bits & 0x00000001u) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        4, this->image_data(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:robosar_fms.Image)
+  return target;
+}
+
+size_t Image::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:robosar_fms.Image)
+  size_t total_size = 0;
+
+  if (has_image_data()) {
+    // required bytes image_data = 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
+        this->image_data());
+  }
+
+  if (has_width()) {
+    // required uint32 width = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->width());
+  }
+
+  if (has_height()) {
+    // required uint32 height = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->height());
+  }
+
+  if (has_channels()) {
+    // required uint32 channels = 3;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->channels());
+  }
+
+  return total_size;
+}
+size_t Image::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:robosar_fms.Image)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+    // required bytes image_data = 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
+        this->image_data());
+
+    // required uint32 width = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->width());
+
+    // required uint32 height = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->height());
+
+    // required uint32 channels = 3;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->channels());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Image::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:robosar_fms.Image)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Image* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Image>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:robosar_fms.Image)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:robosar_fms.Image)
+    MergeFrom(*source);
+  }
+}
+
+void Image::MergeFrom(const Image& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:robosar_fms.Image)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 15u) {
+    if (cached_has_bits & 0x00000001u) {
+      set_image_data(from.image_data());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      width_ = from.width_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      height_ = from.height_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      channels_ = from.channels_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+}
+
+void Image::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:robosar_fms.Image)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Image::CopyFrom(const Image& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:robosar_fms.Image)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Image::IsInitialized() const {
+  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+  return true;
+}
+
+void Image::Swap(Image* other) {
+  if (other == this) return;
+  if (GetArenaNoVirtual() == other->GetArenaNoVirtual()) {
+    InternalSwap(other);
+  } else {
+    Image* temp = New(GetArenaNoVirtual());
+    temp->MergeFrom(*other);
+    other->CopyFrom(*this);
+    InternalSwap(temp);
+    if (GetArenaNoVirtual() == NULL) {
+      delete temp;
+    }
+  }
+}
+void Image::UnsafeArenaSwap(Image* other) {
+  if (other == this) return;
+  GOOGLE_DCHECK(GetArenaNoVirtual() == other->GetArenaNoVirtual());
+  InternalSwap(other);
+}
+void Image::InternalSwap(Image* other) {
+  using std::swap;
+  image_data_.Swap(&other->image_data_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(width_, other->width_);
+  swap(height_, other->height_);
+  swap(channels_, other->channels_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Image::GetMetadata() const {
+  protobuf_robosar_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_robosar_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void SensorData::InitAsDefaultInstance() {
   ::robosar_fms::_SensorData_default_instance_._instance.get_mutable()->accel_data_ = const_cast< ::robosar_fms::Accelerometer*>(
       ::robosar_fms::Accelerometer::internal_default_instance());
@@ -3273,6 +3737,8 @@ void SensorData::InitAsDefaultInstance() {
       ::robosar_fms::Ultrasonic::internal_default_instance());
   ::robosar_fms::_SensorData_default_instance_._instance.get_mutable()->lrf_data_ = const_cast< ::robosar_fms::LaserScanner*>(
       ::robosar_fms::LaserScanner::internal_default_instance());
+  ::robosar_fms::_SensorData_default_instance_._instance.get_mutable()->img_data_ = const_cast< ::robosar_fms::Image*>(
+      ::robosar_fms::Image::internal_default_instance());
 }
 void SensorData::unsafe_arena_set_allocated_accel_data(
     ::robosar_fms::Accelerometer* accel_data) {
@@ -3365,6 +3831,19 @@ void SensorData::unsafe_arena_set_allocated_lrf_data(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:robosar_fms.SensorData.lrf_data)
 }
+void SensorData::unsafe_arena_set_allocated_img_data(
+    ::robosar_fms::Image* img_data) {
+  if (GetArenaNoVirtual() == NULL) {
+    delete img_data_;
+  }
+  img_data_ = img_data;
+  if (img_data) {
+    set_has_img_data();
+  } else {
+    clear_has_img_data();
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:robosar_fms.SensorData.img_data)
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SensorData::kTimestampNsFieldNumber;
 const int SensorData::kSeqIdFieldNumber;
@@ -3375,6 +3854,7 @@ const int SensorData::kSpeedDataFieldNumber;
 const int SensorData::kIrDataFieldNumber;
 const int SensorData::kUsDataFieldNumber;
 const int SensorData::kLrfDataFieldNumber;
+const int SensorData::kImgDataFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SensorData::SensorData()
@@ -3432,6 +3912,11 @@ SensorData::SensorData(const SensorData& from)
   } else {
     lrf_data_ = NULL;
   }
+  if (from.has_img_data()) {
+    img_data_ = new ::robosar_fms::Image(*from.img_data_);
+  } else {
+    img_data_ = NULL;
+  }
   ::memcpy(&timestamp_ns_, &from.timestamp_ns_,
     static_cast<size_t>(reinterpret_cast<char*>(&seq_id_) -
     reinterpret_cast<char*>(&timestamp_ns_)) + sizeof(seq_id_));
@@ -3458,6 +3943,7 @@ void SensorData::SharedDtor() {
   if (this != internal_default_instance()) delete ir_data_;
   if (this != internal_default_instance()) delete us_data_;
   if (this != internal_default_instance()) delete lrf_data_;
+  if (this != internal_default_instance()) delete img_data_;
 }
 
 void SensorData::ArenaDtor(void* object) {
@@ -3487,7 +3973,7 @@ void SensorData::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 127u) {
+  if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
       GOOGLE_DCHECK(accel_data_ != NULL);
       accel_data_->Clear();
@@ -3516,9 +4002,16 @@ void SensorData::Clear() {
       GOOGLE_DCHECK(lrf_data_ != NULL);
       lrf_data_->Clear();
     }
+    if (cached_has_bits & 0x00000080u) {
+      GOOGLE_DCHECK(img_data_ != NULL);
+      img_data_->Clear();
+    }
   }
-  timestamp_ns_ = GOOGLE_ULONGLONG(0);
-  seq_id_ = 0u;
+  if (cached_has_bits & 768u) {
+    ::memset(&timestamp_ns_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&seq_id_) -
+        reinterpret_cast<char*>(&timestamp_ns_)) + sizeof(seq_id_));
+  }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -3645,6 +4138,18 @@ bool SensorData::MergePartialFromCodedStream(
         break;
       }
 
+      // required .robosar_fms.Image img_data = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_img_data()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -3673,12 +4178,12 @@ void SensorData::SerializeWithCachedSizes(
 
   cached_has_bits = _has_bits_[0];
   // required uint64 timestamp_ns = 1;
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000100u) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->timestamp_ns(), output);
   }
 
   // required uint32 seq_id = 2;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000200u) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->seq_id(), output);
   }
 
@@ -3724,6 +4229,12 @@ void SensorData::SerializeWithCachedSizes(
       9, this->_internal_lrf_data(), output);
   }
 
+  // required .robosar_fms.Image img_data = 11;
+  if (cached_has_bits & 0x00000080u) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      11, this->_internal_img_data(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -3740,12 +4251,12 @@ void SensorData::SerializeWithCachedSizes(
 
   cached_has_bits = _has_bits_[0];
   // required uint64 timestamp_ns = 1;
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000100u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->timestamp_ns(), target);
   }
 
   // required uint32 seq_id = 2;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000200u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->seq_id(), target);
   }
 
@@ -3796,6 +4307,13 @@ void SensorData::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         9, this->_internal_lrf_data(), deterministic, target);
+  }
+
+  // required .robosar_fms.Image img_data = 11;
+  if (cached_has_bits & 0x00000080u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        11, this->_internal_img_data(), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3859,6 +4377,13 @@ size_t SensorData::RequiredFieldsByteSizeFallback() const {
         *lrf_data_);
   }
 
+  if (has_img_data()) {
+    // required .robosar_fms.Image img_data = 11;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *img_data_);
+  }
+
   if (has_timestamp_ns()) {
     // required uint64 timestamp_ns = 1;
     total_size += 1 +
@@ -3884,7 +4409,7 @@ size_t SensorData::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  if (((_has_bits_[0] & 0x000001ff) ^ 0x000001ff) == 0) {  // All required fields are present.
+  if (((_has_bits_[0] & 0x000003ff) ^ 0x000003ff) == 0) {  // All required fields are present.
     // required .robosar_fms.Accelerometer accel_data = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -3919,6 +4444,11 @@ size_t SensorData::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *lrf_data_);
+
+    // required .robosar_fms.Image img_data = 11;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *img_data_);
 
     // required uint64 timestamp_ns = 1;
     total_size += 1 +
@@ -3984,12 +4514,17 @@ void SensorData::MergeFrom(const SensorData& from) {
       mutable_lrf_data()->::robosar_fms::LaserScanner::MergeFrom(from.lrf_data());
     }
     if (cached_has_bits & 0x00000080u) {
+      mutable_img_data()->::robosar_fms::Image::MergeFrom(from.img_data());
+    }
+  }
+  if (cached_has_bits & 768u) {
+    if (cached_has_bits & 0x00000100u) {
       timestamp_ns_ = from.timestamp_ns_;
     }
+    if (cached_has_bits & 0x00000200u) {
+      seq_id_ = from.seq_id_;
+    }
     _has_bits_[0] |= cached_has_bits;
-  }
-  if (cached_has_bits & 0x00000100u) {
-    set_seq_id(from.seq_id());
   }
 }
 
@@ -4008,7 +4543,7 @@ void SensorData::CopyFrom(const SensorData& from) {
 }
 
 bool SensorData::IsInitialized() const {
-  if ((_has_bits_[0] & 0x000001ff) != 0x000001ff) return false;
+  if ((_has_bits_[0] & 0x000003ff) != 0x000003ff) return false;
   if (has_accel_data()) {
     if (!this->accel_data_->IsInitialized()) return false;
   }
@@ -4026,6 +4561,9 @@ bool SensorData::IsInitialized() const {
   }
   if (has_us_data()) {
     if (!this->us_data_->IsInitialized()) return false;
+  }
+  if (has_img_data()) {
+    if (!this->img_data_->IsInitialized()) return false;
   }
   return true;
 }
@@ -4058,6 +4596,7 @@ void SensorData::InternalSwap(SensorData* other) {
   swap(ir_data_, other->ir_data_);
   swap(us_data_, other->us_data_);
   swap(lrf_data_, other->lrf_data_);
+  swap(img_data_, other->img_data_);
   swap(timestamp_ns_, other->timestamp_ns_);
   swap(seq_id_, other->seq_id_);
   swap(_has_bits_[0], other->_has_bits_[0]);
@@ -4094,6 +4633,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::robosar_fms::Encoder_speed* Aren
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::robosar_fms::LaserScanner* Arena::CreateMaybeMessage< ::robosar_fms::LaserScanner >(Arena* arena) {
   return Arena::CreateMessageInternal< ::robosar_fms::LaserScanner >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::robosar_fms::Image* Arena::CreateMaybeMessage< ::robosar_fms::Image >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::robosar_fms::Image >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::robosar_fms::SensorData* Arena::CreateMaybeMessage< ::robosar_fms::SensorData >(Arena* arena) {
   return Arena::CreateMessageInternal< ::robosar_fms::SensorData >(arena);
