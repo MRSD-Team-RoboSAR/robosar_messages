@@ -56,6 +56,8 @@ add_message_files(
   agents_status.msg
   controller_status.msg
   mission_command.msg
+  pose_graph.msg
+  pose_vertex.msg
 )
 
 ## Generate services in the 'srv' folder
